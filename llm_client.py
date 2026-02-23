@@ -1,10 +1,12 @@
 """
 Unified LLM Client with fallback support
 Priority: Gemini → OpenRouter → Ollama
+All API keys read from environment / config (no secrets in code).
 """
 # Import compatibility fix FIRST (before any packages that use importlib.metadata)
 import compat_fix
 
+import os
 import requests
 import json
 from typing import Dict, Optional, Any
@@ -20,35 +22,45 @@ except ImportError:
     genai = None
     types = None
 
+
+def _getenv(key: str, default: str = "") -> str:
+    """Prefer config module if available (so .env is loaded), else os.getenv."""
+    try:
+        import config
+        return getattr(config, key, None) or os.getenv(key, default)
+    except ImportError:
+        return os.getenv(key, default)
+
+
 class LLMClient:
     """Unified LLM client with fallback support"""
-    
+
     def __init__(self):
         self.providers = []
         self.current_provider = None
-        
-        # Priority 1: Gemini
+
+        # Priority 1: Gemini (set GEMINI_API_KEY in .env)
         self.gemini_config = {
-            "model": "gemini-2.5-flash",
+            "model": os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
             "temperature": 0.1,
-            "api_key": "AIzaSyDHaxrdbhUQvLMMns966Kg9nJyeBSRgo98",
+            "api_key": _getenv("GEMINI_API_KEY"),
             "base_url": "https://generativelanguage.googleapis.com/v1beta/models"
         }
-        
-        # Priority 2: OpenRouter
+
+        # Priority 2: OpenRouter (set OPENROUTER_API_KEY in .env)
         self.openrouter_config = {
-            "model": "tngtech/deepseek-r1t2-chimera:free",
+            "model": os.getenv("OPENROUTER_MODEL", "tngtech/deepseek-r1t2-chimera:free"),
             "temperature": 0.1,
-            "api_key": "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",
+            "api_key": _getenv("OPENROUTER_API_KEY"),
             "base_url": "https://openrouter.ai/api/v1"
         }
-        
-        # Priority 3: Ollama (fallback)
+
+        # Priority 3: Ollama (fallback; local)
         self.ollama_config = {
-            "base_url": "http://localhost:11434",
-            "model": "llama3.1:8b"
+            "base_url": _getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
+            "model": _getenv("OLLAMA_MODEL", "llama3.1:8b")
         }
-        
+
         # Initialize providers in priority order
         self._initialize_providers()
     
@@ -78,7 +90,9 @@ class LLMClient:
         print("  ⚠️  No LLM providers available!")
     
     def _test_gemini(self) -> bool:
-        """Test if Gemini is available"""
+        """Test if Gemini is available (requires GEMINI_API_KEY in .env)."""
+        if not (self.gemini_config.get("api_key") or "").strip():
+            return False
         try:
             url = f"{self.gemini_config['base_url']}/{self.gemini_config['model']}:generateContent"
             params = {"key": self.gemini_config['api_key']}
@@ -95,7 +109,9 @@ class LLMClient:
             return False
     
     def _test_openrouter(self) -> bool:
-        """Test if OpenRouter is available"""
+        """Test if OpenRouter is available (requires OPENROUTER_API_KEY in .env)."""
+        if not (self.openrouter_config.get("api_key") or "").strip():
+            return False
         try:
             url = f"{self.openrouter_config['base_url']}/chat/completions"
             headers = {

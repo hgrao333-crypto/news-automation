@@ -6,9 +6,9 @@ os.environ.setdefault('TOKENIZERS_PARALLELISM', 'false')
 
 load_dotenv()
 
-# Imagine Art API Configuration
-IMAGINE_TOKEN = os.getenv("IMAGINE_TOKEN", "Bearer vk-KocZ3f3P1qy2Z02tpH2Dn8ZTFHCDJJfCQGp8LPijSSta5a")
-IMAGINE_API_URL = "https://api.vyro.ai/v2/image/generations"
+# Imagine Art API Configuration (set IMAGINE_TOKEN in .env; see .env.example)
+IMAGINE_TOKEN = os.getenv("IMAGINE_TOKEN", "")
+IMAGINE_API_URL = os.getenv("IMAGINE_API_URL", "https://api.vyro.ai/v2/image/generations")
 
 # Ollama Configuration
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
@@ -16,6 +16,10 @@ OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1:8b")  # Default to llama3.1:8
 
 # News API Configuration
 NEWS_API_KEY = os.getenv("NEWS_API_KEY", "")
+
+# LLM providers (for content generation; optional – Ollama is local fallback)
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 
 # Video Configuration
 VIDEO_DURATION = 60  # seconds
@@ -34,9 +38,9 @@ YOUTUBE_AUTO_UPLOAD = os.getenv("YOUTUBE_AUTO_UPLOAD", "false").lower() == "true
 YOUTUBE_PRIVACY_STATUS = os.getenv("YOUTUBE_PRIVACY_STATUS", "public")  # public, unlisted, private
 YOUTUBE_CATEGORY_ID = os.getenv("YOUTUBE_CATEGORY_ID", "22")  # 22 = People & Blogs
 
-# TTS Configuration
+# TTS Configuration (set ELEVENLABS_API_KEY in .env for ElevenLabs; Edge-TTS/gTTS are free)
 # Priority order: ElevenLabs > Edge-TTS > gTTS
-ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY", "sk_ccf16b88610c35baec3b2d48b401cc692292e5ca5f5e7f25")
+ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY", "")
 
 # ElevenLabs Voice Selection for Indian Names
 # RECOMMENDED for Indian names (best pronunciation):
@@ -54,7 +58,7 @@ ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY", "sk_ccf16b88610c35baec3b2d4
 # - en-IN-PrabhatNeural (Male) - Specifically trained for Indian English names
 # These are FREE and handle Indian names excellently!
 
-ELEVENLABS_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "2zRM7PkgwBPiau2jvVXc")  # User-selected voice for Indian names
+ELEVENLABS_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "")  # e.g. 2zRM7PkgwBPiau2jvVXc for Indian names
 
 # ElevenLabs Model Selection
 # Available models for best Indian name pronunciation:
@@ -65,7 +69,7 @@ ELEVENLABS_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "2zRM7PkgwBPiau2jvVXc")  
 # - "eleven_multilingual_v1" - Older multilingual model
 # NOTE: ElevenLabs v3 is typically accessed via "eleven_turbo_v2_5" or check latest API docs
 # For v3 specifically, the model might be named "eleven_turbo_v2_5" or similar
-ELEVENLABS_MODEL_ID = os.getenv("ELEVENLABS_MODEL_ID", "eleven_turbo_v2_5")  # v3 model, best for Indian names
+ELEVENLABS_MODEL_ID = os.getenv("ELEVENLABS_MODEL_ID", "eleven_turbo_v2_5")
 
 TTS_USE_ELEVENLABS = os.getenv("TTS_USE_ELEVENLABS", "true").lower() == "true"  # Use ElevenLabs (best quality) by default
 TTS_USE_EDGE_TTS = os.getenv("TTS_USE_EDGE_TTS", "true").lower() == "true"  # Use Edge-TTS as fallback

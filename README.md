@@ -20,7 +20,7 @@ Automated system for generating 60-second news shorts for YouTube using AI-gener
 
 - Python 3.8+
 - Ollama installed and running locally (default: http://localhost:11434)
-- Imagine Art API token (already configured)
+- Imagine Art API token (see `.env.example`)
 
 ### Installation
 
@@ -29,14 +29,9 @@ Automated system for generating 60-second news shorts for YouTube using AI-gener
 pip install -r requirements.txt
 ```
 
-2. Set up environment variables (optional):
-Create a `.env` file with:
-```
-IMAGINE_TOKEN=Bearer vk-KocZ3f3P1qy2Z02tpH2Dn8ZTFHCDJJfCQGp8LPijSSta5a
-OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama3.2
-NEWS_API_KEY=your_newsapi_key_here  # Optional, for better news fetching
-```
+2. Set up environment variables:
+   Copy `.env.example` to `.env` and fill in your keys (no secrets are committed).
+   Required for full features: `IMAGINE_TOKEN`, and optionally `NEWS_API_KEY`, `GEMINI_API_KEY` or `OPENROUTER_API_KEY`, `ELEVENLABS_API_KEY`. Ollama works without keys.
 
 3. Make sure Ollama is running:
 ```bash
@@ -65,21 +60,43 @@ Or let it auto-detect a trending topic:
 python main.py --type topic
 ```
 
-## Project Structure
+## Project Structure (SOLID)
+
+The codebase follows SOLID principles and a ports-and-adapters layout so you can plug in different news sources (e.g. real-time feed or an openclaw agent) without changing the core pipeline.
 
 ```
 news-automation/
-├── main.py                 # Main orchestration script
-├── config.py              # Configuration settings
-├── news_fetcher.py        # News fetching from RSS/NewsAPI
-├── content_generator.py   # Ollama integration for script generation
-├── image_generator.py     # Imagine Art API integration
-├── tts_generator.py       # Text-to-speech generation
-├── video_generator.py     # Video compilation
-├── requirements.txt       # Python dependencies
-├── output/                # Generated videos (created automatically)
-└── temp/                  # Temporary files (created automatically)
+├── main.py                    # Entrypoint (delegates to pipeline)
+├── config.py                  # Env-based configuration (no secrets in code)
+├── requirements.txt
+├── pyproject.toml             # Package metadata
+├── .env.example               # Template for .env (copy to .env)
+├── src/news_automation/       # Main package
+│   ├── domain/               # Models (Article, ScriptData, Segment)
+│   ├── ports/                # Interfaces (INewsSource, IContentGenerator, …)
+│   ├── adapters/             # Implementations wrapping existing modules
+│   ├── application/          # VideoPipeline (orchestration, dependency injection)
+│   └── cli.py                # CLI (python -m news_automation)
+├── news_fetcher.py           # News (RSS/NewsAPI/Gemini) – used by adapter
+├── content_generator.py      # Script/selection – used by adapter
+├── image_generator.py
+├── tts_generator.py
+├── video_generator.py
+├── youtube_uploader.py
+├── output/                   # Generated videos
+└── temp/                     # Temporary files
 ```
+
+### Using a real-time feed or openclaw agent
+
+The pipeline depends on **interfaces** (ports), not concrete classes. To drive videos from a real-time feed or another agent (e.g. openclaw):
+
+1. Implement the `INewsSource` port: provide `fetch_today_news(limit, test_articles)` and `fetch_hot_topic(topic, limit)` returning the same article dict shape (e.g. `title`, `description`, `link`, `published`).
+2. Build the pipeline with your adapter:  
+   `pipeline = VideoPipeline(news_source=YourRealtimeNewsAdapter(), **default_adapters())`  
+   (or use `default_adapters(news_source=YourRealtimeNewsAdapter())` and pass the rest as-is).
+
+Other entry points (same pipeline, different formats): `single_story_viral.py`, `must_know_today.py`, `must_know_all_audiences.py`, `afternoon.py`, `extended_video_generator.py`. See **ARCHITECTURE.md** for the SOLID layout and how to plug in a custom news source.
 
 ## Workflow
 
@@ -100,7 +117,7 @@ Edit `config.py` to customize:
 
 ## Notes
 
-- The system uses RSS feeds by default (BBC, CNN, Reuters)
+- Indian RSS feeds are used by default; set `country` in the news adapter for others
 - NewsAPI key is optional but recommended for better results
 - Generated videos are saved in the `output/` directory
 - Temporary files are stored in `temp/` directory
