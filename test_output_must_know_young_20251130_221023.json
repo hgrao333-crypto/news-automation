@@ -1,0 +1,75 @@
+{
+  "age_group": "young",
+  "story_count": 4,
+  "generated_at": "2025-11-30T22:10:23.041858",
+  "title": "Urgent: Musk on H-1B + Cyclone Impacts You!",
+  "full_script": "This changes everything. 4 stories you NEED to know! Breaking: Your dream US job just got tougher! H-1B visa changes affect YOUR chances of working in America. Fewer visas mean more competition for your dream job. Breaking: Your dream job could be at risk! Musk says H1-B misuse hurts opportunities for talented grads like you. Fewer visas mean tougher competition for limited tech jobs. Alert: Sri Lanka drowning! Your help is needed now. This matters: climate change fueled this disaster, impacting us all. Donating now supports vital relief efforts there and here. Alert: Cyclone Ditwah Impacts Tamil Nadu! This matters: Travel plans and festival budgets could be at risk! Expect potential disruptions and increased travel costs. Four stories, huge impact. Don't miss tomorrow's news, subscribe now!",
+  "segments": [
+    {
+      "text": "This changes everything. 4 stories you NEED to know!",
+      "type": "opening",
+      "duration": 4,
+      "start_time": 0
+    },
+    {
+      "text": "Breaking: Your dream US job just got tougher! H-1B visa changes affect YOUR chances of working in America. Fewer visas mean more competition for your dream job.",
+      "type": "story",
+      "story_index": 1,
+      "duration": 13,
+      "start_time": 4
+    },
+    {
+      "text": "Breaking: Your dream job could be at risk! Musk says H1-B misuse hurts opportunities for talented grads like you. Fewer visas mean tougher competition for limited tech jobs.",
+      "type": "story",
+      "story_index": 2,
+      "duration": 13,
+      "start_time": 17
+    },
+    {
+      "text": "Alert: Sri Lanka drowning! Your help is needed now. This matters: climate change fueled this disaster, impacting us all. Donating now supports vital relief efforts there and here.",
+      "type": "story",
+      "story_index": 3,
+      "duration": 13,
+      "start_time": 30
+    },
+    {
+      "text": "Alert: Cyclone Ditwah Impacts Tamil Nadu! This matters: Travel plans and festival budgets could be at risk! Expect potential disruptions and increased travel costs.",
+      "type": "story",
+      "story_index": 4,
+      "duration": 14,
+      "start_time": 43
+    },
+    {
+      "text": "Four stories, huge impact. Don't miss tomorrow's news, subscribe now!",
+      "type": "closing",
+      "duration": 3,
+      "start_time": 57
+    }
+  ],
+  "image_prompts": [
+    "Professional news broadcast opening with 'Must Know Today' text overlay",
+    "A winding road leading to a futuristic city skyline at sunset. Silhouettes of young people looking towards the city with a mix of hope and concern on their faces.",
+    "A winding road leading to a futuristic cityscape filled with glowing high-tech buildings, but the road is partially blocked by a large barrier.",
+    "A split image: One side shows raging floodwaters engulfing a Sri Lankan village, the other side shows a diverse group of young adults using their phones to donate to a relief fund. The colors are contrasting - dark blues and greys for the flood, and bright, hopeful colors for the donation scene.",
+    "A vibrant street scene in Chennai during a festival, suddenly disrupted by strong winds and rain, with people struggling to hold onto decorations and umbrellas.",
+    "Professional news broadcast closing scene"
+  ],
+  "selected_articles": [
+    {
+      "title": "US benefited from talented Indians: Musk on H-1B visa row, immigration",
+      "description": "US benefited from talented Indians: Musk on H-1B visa row, immigration"
+    },
+    {
+      "title": "Elon Musk says US has ‘benefitted immensely’ from Indian talent, calls out H1-B system misuse on Nikhil Kamath’s podcast",
+      "description": "Elon Musk said the US has “benefitted immensely from talented Indians” but argued that rising illegal immigration has shifted attitudes toward migrants. He added that while the H-1B visa system has se"
+    },
+    {
+      "title": "Cyclone Ditwah: Toll climbs to 334 in Sri Lanka; EAM updates on India's relief response",
+      "description": "Sri Lanka is facing a severe crisis as Cyclone Ditwah has caused devastating floods and landslides, resulting in at least 334 deaths and nearly 400 people missing. Over a million individuals are affec"
+    },
+    {
+      "title": "Cyclone Ditwah weakens, moves northward slowly along Tamil Nadu coast",
+      "description": "For Monday (December 1), light to moderate rain is likely at isolated places over Tamil Nadu and Puducherry–Karaikal, with thunderstorms and lightning at a few places. Heavy rain is likely at isolated"
+    }
+  ]
+}

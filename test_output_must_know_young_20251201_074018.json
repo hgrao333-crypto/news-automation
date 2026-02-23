@@ -1,0 +1,75 @@
+{
+  "age_group": "young",
+  "story_count": 4,
+  "generated_at": "2025-12-01T07:40:18.835515",
+  "title": "Urgent: Cyclone Chaos, Musk's Secret & India's Future!",
+  "full_script": "Today's news: 4 stories affecting your world today. Breaking: Chennai schools closed due to Cyclone! This affects students and young families in affected districts directly. Stay safe, check updates, classes will resume later. Alert: Cyclone Ditwah weakens, rain persists! This impacts travel, commutes, and potential job disruptions for many. Expect delays, possible power outages. Plan accordingly, stay safe! Breaking: Musk's partner revealed, son's unique name! This affects representation and STEM inspiration for young, diverse families. This means breaking barriers and celebrating cultural heritage. Important: India's population to stabilize by 2080! This impacts long-term job markets and future resource availability. This means fewer jobs, potentially more resources per person. Four stories, big impact. Stay ahead, subscribe now!",
+  "segments": [
+    {
+      "text": "Today's news: 4 stories affecting your world today.",
+      "type": "opening",
+      "duration": 4,
+      "start_time": 0
+    },
+    {
+      "text": "Breaking: Chennai schools closed due to Cyclone! This affects students and young families in affected districts directly. Stay safe, check updates, classes will resume later.",
+      "type": "story",
+      "story_index": 1,
+      "duration": 13,
+      "start_time": 4
+    },
+    {
+      "text": "Alert: Cyclone Ditwah weakens, rain persists! This impacts travel, commutes, and potential job disruptions for many. Expect delays, possible power outages. Plan accordingly, stay safe!",
+      "type": "story",
+      "story_index": 2,
+      "duration": 13,
+      "start_time": 17
+    },
+    {
+      "text": "Breaking: Musk's partner revealed, son's unique name! This affects representation and STEM inspiration for young, diverse families. This means breaking barriers and celebrating cultural heritage.",
+      "type": "story",
+      "story_index": 3,
+      "duration": 13,
+      "start_time": 30
+    },
+    {
+      "text": "Important: India's population to stabilize by 2080! This impacts long-term job markets and future resource availability. This means fewer jobs, potentially more resources per person.",
+      "type": "story",
+      "story_index": 4,
+      "duration": 14,
+      "start_time": 43
+    },
+    {
+      "text": "Four stories, big impact. Stay ahead, subscribe now!",
+      "type": "closing",
+      "duration": 3,
+      "start_time": 57
+    }
+  ],
+  "image_prompts": [
+    "Professional news broadcast opening with 'Must Know Today' text overlay",
+    "A swirling cyclone depicted with heavy rain lashing against palm trees and flooded streets in a coastal city.",
+    "A flooded city street with cars partially submerged, people wading through water, dark storm clouds overhead, wind blowing trees, and a broken power line sparking in the distance.",
+    "A diverse group of young adults looking up at a stylized constellation representing a famous physicist, with subtle Indian cultural motifs woven into the design.",
+    "A diverse group of young adults looking optimistically toward a rising sun over a futuristic, green cityscape.",
+    "Professional news broadcast closing scene"
+  ],
+  "selected_articles": [
+    {
+      "title": "Cyclone Ditwah: Are Chennai schools closed today? IMD issues orange alert for coastal Tamil Nadu",
+      "description": "Yes, schools and all educational institutions in Chennai, as well as other Tamil Nadu districts, including Chengalpattu and Tiruvallur, will remain closed today, December 1."
+    },
+    {
+      "title": "Cyclone Ditwah tracker LIVE: Storm weakens into deep depression but IMD predicts more rain on Monday in THESE districts",
+      "description": "Cyclone Ditwah tracker LIVE: The cyclonic storm severely impacted Tamil Nadu and nearby regions as it caused significant rainfall and three deaths. As it weakens, IMD predicted continued rainfall and "
+    },
+    {
+      "title": "Elon Musk Reveals Partner Shivon Is Half-Indian, Son Named After Physicist S. Chandrasekhar",
+      "description": "Elon Musk Reveals Partner Shivon Is Half-Indian, Son Named After Physicist S. Chandrasekhar"
+    },
+    {
+      "title": "India's Population To Stabilise By 2080 Due To Dip In Fertility Rate: Report",
+      "description": "While birth rates are falling, life expectancy continues to rise due to improvements in healthcare."
+    }
+  ]
+}

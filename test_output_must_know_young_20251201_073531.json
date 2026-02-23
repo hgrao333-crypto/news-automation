@@ -1,0 +1,75 @@
+{
+  "age_group": "young",
+  "story_count": 4,
+  "generated_at": "2025-12-01T07:35:31.229722",
+  "title": "Urgent: 4 Stories That Change EVERYTHING Today",
+  "full_script": "This changes EVERYTHING! 4 stories you MUST know! Alert: Elon's family secret REVEALED! This matters because diversity in STEM role models inspires future innovators like YOU. It shapes perceptions and opens doors for younger generations. Alert: Your Future is Being Built NOW! India's youth energy fuels growth. This means more opportunities for YOU! New jobs, innovation, and a stronger, globally competitive India. Alert: India's Future is Shifting! This affects YOUR job market and future opportunities. Competition will change. Fewer jobs overall, but more opportunities in elder care. Breaking: Power moves for social harmony! This matters: CM's son redefined status, proving equality isn't just a slogan. Imagine leaders prioritizing community: that's real change! That's the news! React and subscribe, or you'll miss out!",
+  "segments": [
+    {
+      "text": "This changes EVERYTHING! 4 stories you MUST know!",
+      "type": "opening",
+      "duration": 4,
+      "start_time": 0
+    },
+    {
+      "text": "Alert: Elon's family secret REVEALED! This matters because diversity in STEM role models inspires future innovators like YOU. It shapes perceptions and opens doors for younger generations.",
+      "type": "story",
+      "story_index": 1,
+      "duration": 13,
+      "start_time": 4
+    },
+    {
+      "text": "Alert: Your Future is Being Built NOW! India's youth energy fuels growth. This means more opportunities for YOU! New jobs, innovation, and a stronger, globally competitive India.",
+      "type": "story",
+      "story_index": 2,
+      "duration": 13,
+      "start_time": 17
+    },
+    {
+      "text": "Alert: India's Future is Shifting! This affects YOUR job market and future opportunities. Competition will change. Fewer jobs overall, but more opportunities in elder care.",
+      "type": "story",
+      "story_index": 3,
+      "duration": 13,
+      "start_time": 30
+    },
+    {
+      "text": "Breaking: Power moves for social harmony! This matters: CM's son redefined status, proving equality isn't just a slogan. Imagine leaders prioritizing community: that's real change!",
+      "type": "story",
+      "story_index": 4,
+      "duration": 14,
+      "start_time": 43
+    },
+    {
+      "text": "That's the news! React and subscribe, or you'll miss out!",
+      "type": "closing",
+      "duration": 3,
+      "start_time": 57
+    }
+  ],
+  "image_prompts": [
+    "Professional news broadcast opening with 'Must Know Today' text overlay",
+    "A diverse group of young adults of various ethnicities collaborating excitedly on a futuristic science project with holographic displays and advanced technology in the background. One person is looking directly at the viewer with a hopeful expression.",
+    "A vibrant, dynamic image showing diverse young Indian professionals (scientists, engineers, artists, athletes) working collaboratively against a backdrop of modern Indian infrastructure and technological advancements, subtly incorporating elements of both traditional Indian culture and futuristic technology.",
+    "A stylized illustration of a diverse group of young Indian adults looking optimistically towards a rising sun, juxtaposed with a silhouette of elderly individuals receiving care, symbolizing intergenerational shift and new career paths.",
+    "A vibrant mass wedding scene with diverse participants joyfully celebrating, with subtle symbols of equality like balanced scales in the background, all under a warm, inviting light.",
+    "Professional news broadcast closing scene"
+  ],
+  "selected_articles": [
+    {
+      "title": "Did you know Elon Musk’s partner Shivon is half-Indian — and their son is named after a legendary Indian scientist?",
+      "description": "Elon Musk has four children with Shivon — twins Strider and Azure, a daughter Arcadia and son Seldon Lycurgus."
+    },
+    {
+      "title": "Energy of young India driving triumphs in various fields: PM Modi",
+      "description": "Prime Minister Modi lauded India's youth and the cultural bond forged by the Tamil Sangamam, seeing them as vital to a 'Viksit Bharat'. He highlighted recent achievements in space, defence, farming, a"
+    },
+    {
+      "title": "India's Population To Stabilise By 2080 Due To Dip In Fertility Rate: Report",
+      "description": "While birth rates are falling, life expectancy continues to rise due to improvements in healthcare."
+    },
+    {
+      "title": "MP CM`s Son Marries In Mass Wedding With 21 Couples; Governor And Union Ministers Attend Social Harmony Event In Ujjain | Watch",
+      "description": "Madhya Pradesh Chief Minister Mohan Yadav's son opted for a mass wedding instead of a private one, attended by top politicians and religious figures, an event that redefined power, equality and social"
+    }
+  ]
+}
